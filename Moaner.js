@@ -37,7 +37,7 @@ function bpm(){
     if (started){
         started = false;
         elapsed = (new Date().getTime() - start) / 1000;
-        document.getElementById("bpm").innerHTML = (60 / (elapsed)).toString();
+        document.getElementById("bpm").innerHTML = ((elapsed)).toString();
     }
     else {
         start = new Date().getTime();
