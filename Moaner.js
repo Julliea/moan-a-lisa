@@ -35,7 +35,7 @@ function upOrDown(){
 function bpm(){
     if (started){
         started = false;
-        let elapsed = (new Date().getTime() - start)*1000;
+        let elapsed = (new Date().getTime() - start);
         document.getElementById("bpm").innerHTML = (elapsed).toString();
     }
     else {
