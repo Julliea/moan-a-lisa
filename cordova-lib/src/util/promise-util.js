@@ -17,15 +17,18 @@
     under the License.
 */
 
-// All cordova js API moved to cordova-lib. If you don't need the cordova CLI,
-// use cordova-lib directly.
+// Given a function and an array of values, creates a chain of promises that
+// will sequentially execute func(args[i]).
+// Returns a promise.
+//
+function Q_chainmap (args, func) {
+    return Promise.resolve().then(function (inValue) {
+        return args.reduce(function (soFar, arg) {
+            return soFar.then(function (val) {
+                return func(arg, val);
+            });
+        }, Promise.resolve(inValue));
+    });
+}
 
-var cordova_lib = require('cordova-lib');
-module.exports = cordova_lib.cordova;
-
-// Also export the cordova-lib so that downstream consumers of cordova lib and
-// CLI will be able to use CLI's cordova-lib and avoid the risk of having two
-// different versions of cordova-lib which would result in two instances of
-// "events" and can cause bad event handling.
-module.exports.cordova_lib = cordova_lib;
-module.exports.cli = require('./src/cli');
+exports.Q_chainmap = Q_chainmap;
