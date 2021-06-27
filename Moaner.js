@@ -1,6 +1,7 @@
 window.onload = function()
 {
     document.addEventListener("deviceready", init, false);
+    init();
 }
 
 let sensor = new Accelerometer();
