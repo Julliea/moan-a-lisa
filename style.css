@@ -8,7 +8,6 @@
     width: 50%;
     clear: both;
     //margin: 100px auto;
-    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     border: 2px #ffce64 solid;
     text-align: center;
     overflow: hidden;
@@ -18,3 +17,6 @@
     margin-left: auto;
 }
 
+.p .span {
+    color: blue;
+}

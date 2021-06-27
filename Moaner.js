@@ -11,12 +11,12 @@ function init() {
 
 
 sensor.onreading = () => {
-    console.log("Acceleration along X-axis: " + sensor.x);
-    console.log("Acceleration along Y-axis: " + sensor.y);
-    console.log("Acceleration along Z-axis: " + sensor.z);
-    document.getElementById("x").innerHTML = sensor.x;
-    document.getElementById("y").innerHTML = sensor.y;
-    document.getElementById("z").innerHTML = sensor.z;
+    console.log("Acceleration along X-axis: " + Math.round(sensor.x * 100) / 100);
+    console.log("Acceleration along Y-axis: " + Math.round(sensor.y * 100) / 100);
+    console.log("Acceleration along Z-axis: " + Math.round(sensor.z * 100) / 100);
+    document.getElementById("x").innerHTML = (Math.round(sensor.x * 100) / 100).toString();
+    document.getElementById("y").innerHTML = (Math.round(sensor.y * 100) / 100).toString();
+    document.getElementById("z").innerHTML = (Math.round(sensor.z * 100) / 100).toString();
 }
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
