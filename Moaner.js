@@ -35,12 +35,12 @@ function upOrDown(){
 
 }
 function bpm(){
-    if (started){
+    if (started) {
         started = false;
         elapsed = (new Date().getTime() - start);
-        document.getElementById("bpm").innerHTML = (60000 /(elapsed)).toString();
-    }
-    else {
+
+        document.getElementById("bpm").innerHTML = Math.round(60000 / (elapsed)).toString();
+    } else {
         start = new Date().getTime();
         started = true;
     }
