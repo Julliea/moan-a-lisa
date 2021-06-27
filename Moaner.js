@@ -10,6 +10,7 @@ function init() {
 }
 
 let start = new Date().getTime();
+let elapsed = new Date().getTime();
 sensor.onreading = () => {
     upOrDown();
 }
@@ -35,7 +36,7 @@ function upOrDown(){
 function bpm(){
     if (started){
         started = false;
-        let elapsed = (new Date().getTime() - start);
+        elapsed = (new Date().getTime() - start);
         document.getElementById("bpm").innerHTML = (elapsed).toString();
     }
     else {
