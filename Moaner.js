@@ -36,8 +36,8 @@ function upOrDown(){
 function bpm(){
     if (started){
         started = false;
-        elapsed = (new Date().getTime() - start) / 1000;
-        document.getElementById("bpm").innerHTML = ((elapsed)).toString();
+        elapsed = (new Date().getTime() - start);
+        document.getElementById("bpm").innerHTML = (60000 /(elapsed)).toString();
     }
     else {
         start = new Date().getTime();
