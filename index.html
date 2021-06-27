@@ -4,11 +4,40 @@
 <meta charset="utf-8">
 <title>Moan-a-Lisa</title>
 <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        var watch = 0;
+
+        window.onload = function() {
+            //init();
+            document.addEventListener("deviceready", init, false);
+        }
+
+        function init() {
+            watch = navigator.accelerometer.watchAcceleration(success, failure, {frequency: 100});
+        }
+
+        function success(accel) {
+            document.getElementById("x").innerHTML = accel.x;
+            document.getElementById("y").innerHTML = accel.y;
+            document.getElementById("z").innerHTML = accel.z;
+
+        }
+
+        function failure() {
+            alert("Error");
+        }
+    </script>
 </head>
 <body>
     
 <div class="container">
     <label>Testing</label>
+    <tr>
+        <td>X: <span id="x"></span></td>
+        <td>Y: <span id="y"></span></td>
+        <td>Z: <span id="z"></span></td>
+    </tr>
     </div>
     
 </body>
