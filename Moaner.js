@@ -11,7 +11,23 @@ function init() {
 
 
 sensor.onreading = () => {
-    document.getElementById("x").innerHTML = parseFloat(sensor.x).toFixed(2);
+    upOrDown();
+}
+
+function upOrDown(){
+    let x = sensor.x - 9.82;
+    let margin = 0.2;
+
+    if (x < -margin){
+        document.getElementById("x").innerHTML = "UP";
+    }
+    else if (x > margin) {
+        document.getElementById("x").innerHTML = "DOWN";
+    }
+    else {
+        document.getElementById("x").innerHTML = "STILL";
+    }
+
 }
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
