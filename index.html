@@ -6,7 +6,7 @@
 <link href="style.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="cordova.js"></script>
     <script>
-        var watch = 0;
+        let watch = 0;
 
         window.onload = function() {
             //init();
@@ -33,11 +33,13 @@
     
 <div class="container">
     <label>Testing</label>
-    <tr>
-        <td>X: <span id="x"></span></td>
-        <td>Y: <span id="y"></span></td>
-        <td>Z: <span id="z"></span></td>
-    </tr>
+    <table>
+        <tr>
+            <td>X: <span id="x">0</span></td>
+            <td>Y: <span id="y">0</span></td>
+            <td>Z: <span id="z">0</span></td>
+        </tr>
+    </table>
     </div>
     
 </body>
