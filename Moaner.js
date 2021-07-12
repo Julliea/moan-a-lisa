@@ -6,19 +6,19 @@ window.onload = function()
 
 //let sensor = new Accelerometer();
 let sensor = new LinearAccelerationSensor({frequency: 60});
+let start = new Date().getTime();
+let elapsed = new Date().getTime();
+let slider;
+let started = false;
 
 function init() {
     sensor.start();
+    slider = document.getElementById("myRange");
 }
-
-let start = new Date().getTime();
-let elapsed = new Date().getTime();
-let slider = document.getElementById("myRange");
-
 sensor.onreading = () => {
     upOrDown();
 }
-let started = false;
+
 
 function upOrDown(){
     //let x = sensor.x - 9.82;
