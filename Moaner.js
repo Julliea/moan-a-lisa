@@ -18,6 +18,9 @@ function init() {
 sensor.onreading = () => {
     upOrDown();
 }
+slider.oninput = () => {
+    document.getElementById("rrate").innerHTML = slider.value;
+}
 
 
 function upOrDown(){
@@ -40,9 +43,7 @@ function upOrDown(){
 
 
 }
-slider.oninput = function() {
-    document.getElementById("rrate").innerHTML = this.value;
-}
+
 
 function bpm(){
     if (started) {
