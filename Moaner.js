@@ -13,6 +13,7 @@ function init() {
 
 let start = new Date().getTime();
 let elapsed = new Date().getTime();
+let slider = document.getElementById("myRange");
 
 sensor.onreading = () => {
     upOrDown();
@@ -23,8 +24,6 @@ function upOrDown(){
     //let x = sensor.x - 9.82;
     let x = sensor.x
     let margin = 2;
-
-    document.getElementById("rrate").innerHTML = document.getElementById("rrate").value;
 
     //document.getElementById("x").innerHTML = x.toString();
     if (x < -margin){
@@ -39,6 +38,9 @@ function upOrDown(){
     }
 
 
+}
+slider.oninput = function() {
+    document.getElementById("rrate").innerHTML = this.value;
 }
 function bpm(){
     if (started) {
