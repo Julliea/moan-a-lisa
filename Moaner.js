@@ -42,6 +42,7 @@ function upOrDown(){
 slider.oninput = function() {
     document.getElementById("rrate").innerHTML = this.value;
 }
+
 function bpm(){
     if (started) {
         started = false;
