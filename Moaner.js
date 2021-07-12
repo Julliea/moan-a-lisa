@@ -25,6 +25,7 @@ function upOrDown(){
     let x = sensor.x
     let margin = 2;
 
+    document.getElementById("rrate").innerHTML = slider.value;
     //document.getElementById("x").innerHTML = x.toString();
     if (x < -margin){
         document.getElementById("x").innerHTML = "UP";
