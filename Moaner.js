@@ -22,7 +22,7 @@ let started = false;
 function upOrDown(){
     //let x = sensor.x - 9.82;
     let x = sensor.x
-    let margin = document.getElementById("rate").innerHTML;
+    let margin = document.getElementById("rate").value;
 
 
     if (x < -margin){
