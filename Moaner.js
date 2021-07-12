@@ -18,8 +18,8 @@ function init() {
 sensor.onreading = () => {
     upOrDown();
 }
-document.getElementById('myRange').onchange=function(){
-    document.getElementById('rrate').innerHTML = this.value;
+document.getElementById('myRange').oninput=function(){
+    document.getElementById('rrate').innerHTML = slider.value;
 };
 
 
