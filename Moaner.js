@@ -24,16 +24,16 @@ function upOrDown(){
     let x = sensor.x
     let margin = 2;
 
-    document.getElementById("x").innerHTML = x.toString();
+    //document.getElementById("x").innerHTML = x.toString();
     if (x < -margin){
-        //document.getElementById("x").innerHTML = "UP";
+        document.getElementById("x").innerHTML = "UP";
         bpm();
     }
     else if (x > margin) {
-        //document.getElementById("x").innerHTML = "DOWN";
+        document.getElementById("x").innerHTML = "DOWN";
     }
     else {
-        //document.getElementById("x").innerHTML = "STILL";
+        document.getElementById("x").innerHTML = "STILL";
     }
 
 
