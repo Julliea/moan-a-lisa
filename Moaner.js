@@ -18,9 +18,9 @@ function init() {
 sensor.onreading = () => {
     upOrDown();
 }
-slider.oninput = () => {
-    document.getElementById("rrate").innerHTML = slider.value;
-}
+document.getElementById('myRange').onchange=function(){
+    document.getElementById('rrate').innerHTML = this.value;
+};
 
 
 function upOrDown(){
@@ -28,8 +28,6 @@ function upOrDown(){
     let x = sensor.x
     let margin = slider.value;
 
-    //document.getElementById("rrate").innerHTML = slider.value;
-    //document.getElementById("x").innerHTML = x.toString();
     if (x < -margin){
         document.getElementById("x").innerHTML = "UP";
         bpm();
