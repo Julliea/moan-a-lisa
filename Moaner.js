@@ -4,22 +4,25 @@ window.onload = function()
     init();
 }
 
-let sensor = new Accelerometer();
+//let sensor = new Accelerometer();
+let sensor = new LinearAccelerationSensor({frequency: 20});
+
 function init() {
     sensor.start();
 }
 
 let start = new Date().getTime();
 let elapsed = new Date().getTime();
+
 sensor.onreading = () => {
     upOrDown();
 }
 let started = false;
 
 function upOrDown(){
-    let x = sensor.x - 9.82;
-    //let margin = 0.2;
-    let margin = 0;
+    //let x = sensor.x - 9.82;
+    let x = sensor.x
+    let margin = 0.2;
 
     if (x < -margin){
         document.getElementById("x").innerHTML = "UP";
