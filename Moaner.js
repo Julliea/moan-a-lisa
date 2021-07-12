@@ -5,7 +5,7 @@ window.onload = function()
 }
 
 //let sensor = new Accelerometer();
-let sensor = new LinearAccelerationSensor({frequency: 20});
+let sensor = new LinearAccelerationSensor({frequency: 60});
 
 function init() {
     sensor.start();
@@ -22,7 +22,7 @@ let started = false;
 function upOrDown(){
     //let x = sensor.x - 9.82;
     let x = sensor.x
-    let margin = 0.2;
+    let margin = 0.05;
 
     if (x < -margin){
         document.getElementById("x").innerHTML = "UP";
