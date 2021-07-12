@@ -24,6 +24,7 @@ function upOrDown(){
     let x = sensor.x
     let margin = document.getElementById("rate").innerHTML;
 
+
     if (x < -margin){
         document.getElementById("x").innerHTML = "UP";
         bpm();
