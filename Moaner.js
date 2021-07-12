@@ -4,8 +4,8 @@ window.onload = function()
     init();
 }
 
-//let sensor = new Accelerometer();
-let sensor = new LinearAccelerationSensor({frequency: 20});
+let sensor = new Accelerometer();
+//let sensor = new LinearAccelerationSensor({frequency: 20});
 
 function init() {
     sensor.start();
